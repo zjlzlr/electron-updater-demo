@@ -1,0 +1,47 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.6",
+  "description": "A minimal Electron application",
+  "scripts": {
+    "deploy": "electron-builder --dir",
+    "deploy-all": "electron-builder --platform=all",
+    "deploy-mac": "electron-builder --platform=mac",
+    "deploy-win": "electron-builder --win",
+    "dist": "electron-builder",
+    "start": "electron app",
+    "pack-mac": "electron-packager ./app electron-quick-start --platform=darwin --arch=x64 --out ./OutMac --version 1.0.0 --overwrite",
+    "pack-win": "electron-packager ./app electron-quick-start --platform=win64 --arch=x64 --out ./OutWin --version 1.0.0 --overwrite",
+    "pack": "electron-packager ./app app --out ./dist --version 1.0.0 --overwrite",
+    "setup": "electron-installer-windows --src dist/app-win32-x64/ --dest dist/installers/",
+    "pack-all": "electron-packager ./app electron-quick-start --all --out ./OutApp --version 1.0.0 --overwrite"
+  },
+  "build": {
+    "productName": "updater-test",
+    "appId": "org.test.updater-test",
+    "directories": {
+      "output": "build"
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.8.2",
+    "electron-builder": "^20.5.1",
+    "electron-packager": "^11.1.0",
+    "electron-winstaller": "^2.6.4",
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^2.21.4",
+    "fs": "0.0.1-security"
+  }
+}
